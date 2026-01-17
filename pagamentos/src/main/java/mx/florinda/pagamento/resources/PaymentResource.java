@@ -9,6 +9,7 @@ import jakarta.ws.rs.Path;
 import mx.florinda.pagamento.entities.Payment;
 import mx.florinda.pagamento.entities.types.PaymentStatus;
 import mx.florinda.pagamento.events.PaymentConfirmedEvent;
+import mx.florinda.pagamento.producers.IssueInvoiceProducer;
 import mx.florinda.pagamento.producers.PaymentConfirmedProducer;
 
 import java.util.List;
@@ -18,6 +19,8 @@ public class PaymentResource {
 
     @Inject
     PaymentConfirmedProducer paymentConfirmedProducer;
+    @Inject
+    IssueInvoiceProducer invoiceProducer;
 
     @GET
     public Uni<List<Payment>> list() {
@@ -39,6 +42,7 @@ public class PaymentResource {
                             payment.status = PaymentStatus.CONFIRMADO;
                             PaymentConfirmedEvent event = new PaymentConfirmedEvent(payment.id, payment.orderId, payment.value);
                             paymentConfirmedProducer.sendMessage(event);
+                            invoiceProducer.sendMessage(event);
                         }));
     }
 
