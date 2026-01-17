@@ -16,7 +16,7 @@ Abra a código do serviço de `pagamentos` no IntelliJ.
 
 Execute o serviço através do IntelliJ, utilizando _Maven_ > _Plugins_ > _Quarkus_ > `quarkus:dev`.
 
-Abra o Postman e importe a coleção `florinda-eats-pagamento.postman_collection`.
+Abra no navegador a URL `http://localhost:8081/q/swagger-ui/#/`.
 
 Explore o serviço e seus endpoints. Por exemplo, confirme um pagamento realizando um `PUT http://localhost:8081/pagamentos/1`.
 
@@ -26,7 +26,7 @@ Abra a código do serviço de `pedidos` no IntelliJ.
 
 Execute o serviço através do IntelliJ, utilizando _Maven_ > _Plugins_ > _Quarkus_ > `quarkus:dev`.
 
-Abra o Postman e importe a coleção `florinda-eats-pedidos.postman_collection`.
+Abra no navegador a URL `http://localhost:8080/q/swagger-ui/#/`.
 
 Verifique a listagem de pedidos na URL `http://localhost:8080/pedidos`.
 
@@ -38,7 +38,7 @@ Abra a código do serviço de `notas-fiscais` no IntelliJ.
 
 Execute o serviço através do IntelliJ, utilizando _Maven_ > _Plugins_ > _Quarkus_ > `quarkus:dev`.
 
-Abra o Postman e importe a coleção `florinda-eats-notas-fiscais.postman_collection`.
+Abra no navegador a URL `http://localhost:8082/q/swagger-ui/#/`.
 
 Obtenha uma nota fiscal para um pedido (p. ex., o de id 1) com a URL `http://localhost:8082/nota-fiscal/pedido/1`
 
